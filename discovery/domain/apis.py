@@ -76,5 +76,8 @@ url = 'apis'
 
 definition = {
     'url': url,
+    'datasource': {
+        'default_sort': [('services.version.major', -1),
+                         ('services.version.minor', -1)]},
     'schema': _schema,
 }
