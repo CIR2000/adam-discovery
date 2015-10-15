@@ -58,7 +58,7 @@ _schema = {
                         'build': {'type': 'integer', 'default': 0}
                     }
                 },
-                'deprecated': {'type': 'boolean', 'default': True},
+                'deprecated': {'type': 'boolean', 'default': False},
                 'discovery': {'type': 'string'},
                 'authentication': {
                     'type': 'string',
