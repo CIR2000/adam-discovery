@@ -12,6 +12,7 @@ _schema = {
     'name': {
         'type': 'string',
         'required': True,
+        'unique': True
     },
     'title': {
         'type': 'string',
