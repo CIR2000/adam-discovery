@@ -52,7 +52,7 @@ _schema = {
                 'documentation': {'type': 'string'},
                 'version': {
                     'type': 'dict',
-                    'default': {'major': 0, 'minor': 0, 'build': 1},
+                    'default': {'major': 0, 'minor': 0, 'build': 0},
                     'schema': {
                         'major': {'type': 'integer', 'required': True},
                         'minor': {'type': 'integer', 'default': 0},
@@ -63,7 +63,7 @@ _schema = {
                 'discovery': {'type': 'string'},
                 'authentication': {
                     'type': 'string',
-                    'required': True,
+                    'default': 'None',
                     'allowed': ['BearerToken', 'Basic', 'None'],
                 }
             }
