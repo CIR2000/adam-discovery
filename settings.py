@@ -8,15 +8,20 @@
 """
 import os
 import discovery.domain as domain
+import urllib
 
 # Sensible settings are retrieved from environment variables when available in
 # the hosting environment, or set to default values for local testing.
 if os.environ.get('TESTING') is None:
-    MONGO_HOST = os.environ.get('MONGO_HOST', 'localhost')
-    MONGO_PORT = int(os.environ.get('MONGO_PORT', 27017))
-    #MONGO_USERNAME = os.environ.get('MONGO_USERNAME', 'user')
-    #ONGO_PASSWORD = os.environ.get('MONGO_PASSWORD', 'pw')
-    MONGO_DBNAME = os.environ.get('MONGO_DBNAME', 'adam-discovery')
+    user = os.environ.get('MONGO_USERNAME')
+    if user:
+        pw = urllib.parse.quote_plus(os.environ.get('MONGO_PASSWORD'))
+        auth = '%s:%s@' % (user, pw)
+    else:
+        auth = ''
+    uri = os.environ.get('MONGO_URI', 'localhost:27017/adam-discovery')
+    MONGO_URI = "mongodb://%s%s" % (auth, uri)
+    print(MONGO_URI)
 else:
     # Load MONGO settings from test suite.
     # Have to split into two lines in order to get the flake8 noqa tag in
