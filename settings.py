@@ -21,7 +21,6 @@ if os.environ.get('TESTING') is None:
         auth = ''
     uri = os.environ.get('MONGO_URI', 'localhost:27017/adam-discovery')
     MONGO_URI = "mongodb://%s%s" % (auth, uri)
-    print(MONGO_URI)
 else:
     # Load MONGO settings from test suite.
     # Have to split into two lines in order to get the flake8 noqa tag in
