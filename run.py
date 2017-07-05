@@ -11,6 +11,7 @@
 import os
 
 from eve import Eve
+from auth import Auth
 # from discovery.oauth2 import BearerAuth
 
 # Load the settings file using a robust path so it works when
@@ -27,7 +28,7 @@ else:
     host = '127.0.0.1'
     port = 9000
 
-app = Eve(settings=settings_file)
+app = Eve(settings=settings_file, auth=Auth)
 
 if __name__ == '__main__':
     app.run(host=host, port=port)
