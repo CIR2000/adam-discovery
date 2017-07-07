@@ -1,1 +1,2 @@
--e git+https://github.com/pyeve/eve.git@e3ec79b2d93073682d5200460a86d2dfe025764e#egg=Eve
+-e git+https://github.com/pyeve/eve.git@d2c09c4e8333b90456ea1369aa99288976f051c6#egg=Eve
+gunicorn
